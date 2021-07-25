@@ -11,7 +11,7 @@ Using DRF, REST API is created here.
 ### Installation
 Clone into your local system
 ```
-git clone somelink
+git clone https://github.com/VishalTiwari-99/Crazliv-Games-Project.git
 ```
 Install requirements
 ```
