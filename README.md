@@ -1,7 +1,7 @@
 # Crazliv-Games-Project
 
 ## Basic API performing CRUD operations
-Here a django project 'student' is created and inside this project user app is there.
+Here a django project 'student' is created and inside this project, a 'user' app is there.
 'user' app consists of two model, i.e., BasicDetails and Education
 
 
