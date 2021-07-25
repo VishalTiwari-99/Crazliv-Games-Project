@@ -7,6 +7,8 @@ class EducationSerializers(serializers.ModelSerializer):
         fields = '__all__'
 
 class BasicDetailsSerializers(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class Meta:
         model = BasicDetails
         fields = '__all__'
+

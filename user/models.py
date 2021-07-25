@@ -1,5 +1,7 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
+from django.conf import settings
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -20,6 +22,7 @@ class BasicDetails(models.Model):
         ('F', 'Female'),
         ('O', 'Other')
     )
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True)
     first_name = models.CharField(max_length = 30, blank=False, null=False)
     last_name = models.CharField(max_length = 30, blank=False, null=False)
     father_name = models.CharField(max_length = 50, blank=False, null=False)

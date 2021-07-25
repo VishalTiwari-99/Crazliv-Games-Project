@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from .models import Education, BasicDetails
 from .serializers import EducationSerializers, BasicDetailsSerializers
 from rest_framework import generics
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 
 class ListEducation(generics.ListAPIView):
     queryset = Education.objects.all()
@@ -16,11 +16,13 @@ class ListDetails(generics.ListAPIView):
     permission_classes = [AllowAny]
 
 class EducationViewset(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Education.objects.all()
     serializer_class = EducationSerializers
 
 class DetailsViewset(viewsets.ModelViewSet):
-    queryset = BasicDetails.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = BasicDetailsSerializers
+    queryset= BasicDetails.objects.all()
 
 
